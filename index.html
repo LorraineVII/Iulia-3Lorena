@@ -9,10 +9,29 @@ title: Proiect cu Cookies
   <meta charset="UTF-8">
   <title>Proiect cu Cookies</title>
   <script>
-   document.cookie = "session=test GDPR"; document.cookie = "favorite_task=collect Data"; function alertCookie() { alert(document.cookie); }
+    allCookies = document.cookie;
+    document.cookie = "name=Oeschger; SameSite=None; Secure";
+    document.cookie = "favorite_food=tripe; SameSite=None; Secure";
+
+function showCookies() {
+  const output = document.getElementById("cookies");
+  output.textContent = `> ${document.cookie}`;
+}
+
+function clearOutputCookies() {
+  const output = document.getElementById("cookies");
+  output.textContent = "";
+}
   </script>
 </head>
-<body> Bine ai venit la lab <button onclick="alertCookie()">Show cookies</button> 
+<body>
+  <h1>Bine ai venit la lab</h1>
+  <button onclick="alertCookie()">Afișează cookie-urile</button>
+  <button onclick="showCookieValue()">Show cookie value</button>
+  <button onclick="clearOutputCookieValue()">Clear</button>
+  <div>
+    <code id="cookie-value"></code>
+  </div>
+
 </body>
 </html>
- 
